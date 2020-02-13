@@ -29,4 +29,3 @@ alter table quote_sources
     add constraint FKot1d45b0l8e1ffe0ggndnlsbr foreign key (source_id) references source;
 alter table quote_sources
     add constraint FKgidslffhug0bnrra9c5d0vqcj foreign key (quote_id) references quote;
-;
