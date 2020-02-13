@@ -21,12 +21,13 @@ import org.springframework.lang.NonNull;
         @Index(columnList = "created")
     }
 )
-public class Quote {
+public class Source {
 
   @NonNull
-  @Id@GeneratedValue(generator = "uuid2")
+  @Id
+  @GeneratedValue(generator = "uuid2")
   @GenericGenerator(name = "uuid2", strategy = "uuid2")
-  @Column(name = "quote_id", columnDefinition = "CHAR(16) FOR BIT DATA",
+  @Column(name = "source_id", columnDefinition = "CHAR(16) FOR BIT DATA",
       nullable = false, updatable = false)
   private UUID id;
 
@@ -43,8 +44,8 @@ public class Quote {
   private Date updated;
 
   @NonNull
-  @Column(length = 4096, nullable = false, unique = true)
-  private String text;
+  @Column(length = 1024, nullable = false, unique = true)
+  private String name;
 
   @NonNull
   public UUID getId() {
@@ -62,12 +63,12 @@ public class Quote {
   }
 
   @NonNull
-  public String getText() {
-    return text;
+  public String getName() {
+    return name;
   }
 
-  public void setText(@NonNull String text) {
-    this.text = text;
+  public void setName(@NonNull String name) {
+    this.name = name;
   }
 
 }
