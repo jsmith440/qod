@@ -8,5 +8,4 @@ public interface SourceRepository extends JpaRepository<Source, UUID> {
 
   Iterable<Source> findAllByOrderByName();
 
-
 }

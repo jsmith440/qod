@@ -40,7 +40,7 @@ public class QuoteController {
   public ResponseEntity<Quote> post(@RequestBody Quote quote) {
     quoteRepository.save(quote);
     URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-        .path("{/id}")
+        .path("/{id}")
         .build(quote.getId());
     return ResponseEntity.created(location).body(quote);
   }
